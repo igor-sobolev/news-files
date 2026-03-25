@@ -6,6 +6,7 @@ import { useSyncExternalStore } from "react";
 
 import {
   clearViewHistory,
+  getViewHistoryServerSnapshot,
   readViewHistory,
   reloadViewHistory,
   subscribeToViewHistory,
@@ -15,7 +16,7 @@ export function HistoryPanel() {
   const items = useSyncExternalStore(
     subscribeToViewHistory,
     readViewHistory,
-    () => [],
+    getViewHistoryServerSnapshot,
   );
 
   return (

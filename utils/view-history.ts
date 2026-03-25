@@ -43,6 +43,10 @@ export function readViewHistory() {
   }
 }
 
+export function getViewHistoryServerSnapshot() {
+  return EMPTY_HISTORY;
+}
+
 export function recordViewHistory(entry: ViewHistoryEntry) {
   if (typeof window === "undefined") {
     return;
