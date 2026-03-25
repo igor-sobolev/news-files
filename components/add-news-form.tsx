@@ -103,17 +103,17 @@ export function AddNewsForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="glass-panel space-y-6 rounded-[2rem] p-5 sm:p-6 lg:p-8"
+      className="glass-panel space-y-6 rounded-4xl p-5 sm:p-6 lg:p-8"
     >
       <div className="grid gap-4 md:grid-cols-2">
         <label className="space-y-2">
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-(--muted)">
             Title
           </span>
           <input
             value={formState.title}
             onChange={(event) => updateField("title", event.target.value)}
-            className="w-full rounded-[1.25rem] border border-[var(--line)] bg-white/80 px-4 py-3 outline-none transition focus:border-[var(--accent)]"
+            className="w-full rounded-[1.25rem] border border-(--line) bg-white/80 px-4 py-3 outline-none transition focus:border-(--accent)"
             placeholder="Morning brief: new commuter route opens"
           />
           {fieldErrors.title ? (
@@ -124,13 +124,13 @@ export function AddNewsForm() {
         </label>
 
         <label className="space-y-2">
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-(--muted)">
             Category
           </span>
           <input
             value={formState.category}
             onChange={(event) => updateField("category", event.target.value)}
-            className="w-full rounded-[1.25rem] border border-[var(--line)] bg-white/80 px-4 py-3 outline-none transition focus:border-[var(--accent)]"
+            className="w-full rounded-[1.25rem] border border-(--line) bg-white/80 px-4 py-3 outline-none transition focus:border-(--accent)"
             placeholder="City"
           />
           {fieldErrors.category ? (
@@ -141,13 +141,13 @@ export function AddNewsForm() {
         </label>
 
         <label className="space-y-2 md:col-span-2">
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-(--muted)">
             Excerpt
           </span>
           <input
             value={formState.excerpt}
             onChange={(event) => updateField("excerpt", event.target.value)}
-            className="w-full rounded-[1.25rem] border border-[var(--line)] bg-white/80 px-4 py-3 outline-none transition focus:border-[var(--accent)]"
+            className="w-full rounded-[1.25rem] border border-(--line) bg-white/80 px-4 py-3 outline-none transition focus:border-(--accent)"
             placeholder="Summarize the story in one clear sentence."
           />
           {fieldErrors.excerpt ? (
@@ -158,13 +158,13 @@ export function AddNewsForm() {
         </label>
 
         <label className="space-y-2 md:col-span-2">
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[var(--muted)]">
+          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-(--muted)">
             Author
           </span>
           <input
             value={formState.author}
             onChange={(event) => updateField("author", event.target.value)}
-            className="w-full rounded-[1.25rem] border border-[var(--line)] bg-white/80 px-4 py-3 outline-none transition focus:border-[var(--accent)]"
+            className="w-full rounded-[1.25rem] border border-(--line) bg-white/80 px-4 py-3 outline-none transition focus:border-(--accent)"
             placeholder="Optional author name"
           />
           {fieldErrors.author ? (
@@ -182,13 +182,13 @@ export function AddNewsForm() {
       />
 
       {errorMessage ? (
-        <div className="rounded-[1.5rem] border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+        <div className="rounded-3xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
           {errorMessage}
         </div>
       ) : null}
 
       {createdArticle ? (
-        <div className="rounded-[1.5rem] border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
+        <div className="rounded-3xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800">
           <p>
             Published <strong>{createdArticle.title}</strong> successfully.
           </p>
@@ -205,11 +205,11 @@ export function AddNewsForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[var(--accent-strong)] disabled:cursor-not-allowed disabled:opacity-60"
+          className="rounded-full bg-(--accent) px-5 py-3 text-sm font-semibold text-white transition hover:bg-(--accent-strong) disabled:cursor-not-allowed disabled:opacity-60"
         >
           {isSubmitting ? "Publishing..." : "Publish article"}
         </button>
-        <p className="text-sm text-[var(--muted)]">
+        <p className="text-sm text-(--muted)">
           Articles are stored as `.md` files in the public folder.
         </p>
       </div>

@@ -158,7 +158,7 @@ export function NewsFeed({ initialPage }: NewsFeedProps) {
 
   return (
     <section className="space-y-4">
-      <div className="flex items-center justify-between gap-4 px-1 text-sm text-[var(--muted)]">
+      <div className="flex items-center justify-between gap-4 px-1 text-sm text-(--muted)">
         <p>
           {articles.length} of {initialPage.total} articles loaded
         </p>
@@ -176,7 +176,7 @@ export function NewsFeed({ initialPage }: NewsFeedProps) {
       </div>
 
       {errorMessage ? (
-        <div className="rounded-[1.5rem] border border-red-200 bg-red-50 px-5 py-4 text-sm text-red-700">
+        <div className="rounded-3xl border border-red-200 bg-red-50 px-5 py-4 text-sm text-red-700">
           <p>{errorMessage}</p>
           {lastPage?.nextCursor ? (
             <button
@@ -194,15 +194,15 @@ export function NewsFeed({ initialPage }: NewsFeedProps) {
 
       <div ref={sentinelRef} className="flex justify-center py-4">
         {isLoading ? (
-          <div className="rounded-full border border-[var(--line)] bg-white/80 px-4 py-2 text-sm text-[var(--muted)]">
+          <div className="rounded-full border border-(--line) bg-white/80 px-4 py-2 text-sm text-(--muted)">
             Loading more news...
           </div>
         ) : lastPage?.nextCursor ? (
-          <div className="rounded-full border border-dashed border-[var(--line)] px-4 py-2 text-sm text-[var(--muted)]">
+          <div className="rounded-full border border-dashed border-(--line) px-4 py-2 text-sm text-(--muted)">
             Scroll to load the next page.
           </div>
         ) : (
-          <div className="rounded-full border border-dashed border-[var(--line)] px-4 py-2 text-sm text-[var(--muted)]">
+          <div className="rounded-full border border-dashed border-(--line) px-4 py-2 text-sm text-(--muted)">
             End of the newsroom.
           </div>
         )}

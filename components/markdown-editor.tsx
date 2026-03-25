@@ -46,14 +46,14 @@ export function MarkdownEditor({ value, onChange, error }: MarkdownEditorProps) 
 
   return (
     <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
-      <div className="space-y-3 rounded-[1.75rem] border border-[var(--line)] bg-white/70 p-4">
+      <div className="space-y-3 rounded-[1.75rem] border border-(--line) bg-white/70 p-4">
         <div className="flex flex-wrap gap-2">
           {toolbarButtons.map((button) => (
             <button
               key={button.label}
               type="button"
               onClick={() => applyFormatting(button.prefix, button.suffix, button.placeholder)}
-              className="rounded-full border border-[var(--line)] px-3 py-1.5 text-sm font-semibold text-slate-900 transition hover:border-[var(--accent)] hover:bg-[var(--accent-soft)]"
+              className="rounded-full border border-(--line) px-3 py-1.5 text-sm font-semibold text-slate-900 transition hover:border-(--accent) hover:bg-(--accent-soft)"
             >
               {button.label}
             </button>
@@ -65,15 +65,15 @@ export function MarkdownEditor({ value, onChange, error }: MarkdownEditorProps) 
           value={value}
           onChange={(event) => onChange(event.target.value)}
           rows={18}
-          className="min-h-[26rem] w-full rounded-[1.25rem] border border-[var(--line)] bg-[var(--surface-strong)] px-4 py-3 text-base leading-7 outline-none transition focus:border-[var(--accent)]"
+          className="min-h-104 w-full rounded-[1.25rem] border border-(--line) bg-(--surface-strong) px-4 py-3 text-base leading-7 outline-none transition focus:border-(--accent)"
           placeholder="Write the article body in Markdown..."
         />
 
         {error ? <p className="text-sm font-medium text-red-600">{error}</p> : null}
       </div>
 
-      <div className="rounded-[1.75rem] border border-[var(--line)] bg-white/70 p-4">
-        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[var(--muted)]">Preview</p>
+      <div className="rounded-[1.75rem] border border-(--line) bg-white/70 p-4">
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-(--muted)">Preview</p>
         <div className="prose-news mt-4 max-w-none">
           <ReactMarkdown remarkPlugins={[remarkGfm]}>{value || '_Preview will appear here._'}</ReactMarkdown>
         </div>
