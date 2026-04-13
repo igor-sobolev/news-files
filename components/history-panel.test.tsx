@@ -20,6 +20,28 @@ describe("HistoryPanel", () => {
     consoleErrorSpy.mockRestore();
   });
 
+  it("renders history controls with pointer cursor styles", async () => {
+    window.localStorage.setItem(
+      "current-ledger-history",
+      JSON.stringify([
+        { slug: "story", title: "Story", viewedAt: "2026-03-24T00:00:00.000Z" },
+      ]),
+    );
+
+    render(<HistoryPanel />);
+
+    expect(await screen.findByText("Story")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /reload/i }).className).toContain(
+      "cursor-pointer",
+    );
+    expect(screen.getByRole("button", { name: /clear/i }).className).toContain(
+      "cursor-pointer",
+    );
+    expect(screen.getByRole("link", { name: /Story/i }).className).toContain(
+      "cursor-pointer",
+    );
+  });
+
   it("reloads and clears the local history list", async () => {
     window.localStorage.setItem(
       "current-ledger-history",

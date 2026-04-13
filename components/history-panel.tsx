@@ -36,14 +36,14 @@ export function HistoryPanel() {
         <button
           type="button"
           onClick={reloadViewHistory}
-          className="rounded-full border border-(--line) px-4 py-2 text-sm font-semibold text-slate-900 transition hover:border-(--accent) hover:bg-(--accent-soft)"
+          className="cursor-pointer rounded-full border border-(--line) px-4 py-2 text-sm font-semibold text-slate-900 transition hover:border-(--accent) hover:bg-(--accent-soft)"
         >
           Reload
         </button>
         <button
           type="button"
           onClick={clearViewHistory}
-          className="rounded-full border border-transparent bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-700"
+          className="cursor-pointer rounded-full border border-transparent bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-slate-700"
         >
           Clear
         </button>
@@ -59,7 +59,7 @@ export function HistoryPanel() {
             <Link
               key={item.viewedAt}
               href={`/news/${item.slug}` as Route}
-              className="block rounded-2xl border border-(--line) bg-white/70 p-4 transition hover:border-(--accent) hover:-translate-y-0.5"
+              className="cursor-pointer block rounded-2xl border border-(--line) bg-white/70 p-4 transition hover:border-(--accent) hover:-translate-y-0.5"
             >
               <p className="font-semibold text-slate-900">{item.title}</p>
               <p className="mt-1 text-xs uppercase tracking-[0.25em] text-(--muted)">
