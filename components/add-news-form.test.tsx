@@ -10,6 +10,33 @@ jest.mock("next/navigation", () => ({
   }),
 }));
 
+jest.mock("@uiw/react-md-editor", () => ({
+  __esModule: true,
+  default: ({
+    value,
+    onChange,
+  }: {
+    value?: string;
+    onChange?: (value?: string) => void;
+  }) => (
+    <textarea
+      placeholder="Write the article body in Markdown..."
+      value={value ?? ""}
+      onChange={(event) => onChange?.(event.target.value)}
+    />
+  ),
+  commands: {
+    title: {},
+    bold: {},
+    italic: {},
+    strikethrough: {},
+    divider: {},
+    link: {},
+    image: {},
+    code: {},
+  },
+}));
+
 jest.mock("react-markdown", () => ({
   __esModule: true,
   default: ({ children }: { children: React.ReactNode }) => (

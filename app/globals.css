@@ -79,6 +79,23 @@ textarea {
   color: var(--foreground);
 }
 
+.prose-news img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.w-md-editor {
+  overflow: hidden;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+
+.w-md-editor .w-md-editor-preview {
+  border-left: none !important;
+}
+
 .prose-news h1,
 .prose-news h2,
 .prose-news h3 {
